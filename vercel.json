@@ -20,9 +20,7 @@
       "dest": "/dist/public/$1"
     }
   ],
-  "env": {
-    "DATABASE_URL": "@database_url"
-  },
+
   "installCommand": "npm install",
   "buildCommand": "npm run build"
 }

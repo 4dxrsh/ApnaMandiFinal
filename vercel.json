@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "name": "apna-mandi",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["dist/**"]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/dist/index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/dist/public/$1"
+    }
+  ],
+  "env": {
+    "DATABASE_URL": "@database_url"
+  },
+  "installCommand": "npm install",
+  "buildCommand": "npm run build"
+}
